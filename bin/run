@@ -1,0 +1,15 @@
+#!/usr/local/bin/babel-node
+require('babel-polyfill');
+
+var ENV = process.env.NODE_ENV || 'development';
+var PORT = process.env.PORT || 3333;
+var SRC = ENV === 'production' ? '../prod/server' : '../src/server';
+if (ENV === 'development') {
+  // for development use babel/register for faster runtime compilation
+  require('babel-register');
+}
+
+// import server from '../server';
+var server = require(SRC).default
+    server.listen(PORT);
+console.log(`listening on port ${PORT}, env is ${ENV}`);

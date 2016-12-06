@@ -1,0 +1,33 @@
+{
+  "apps": [{
+    "name": "koa2-ecosys",
+    "script": "./bin/run",
+    "merge_logs": true,
+    "instances": 2,
+    "exec_mode": "cluster_mode",
+    "autorestart": true,
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "comments_exec_interpreter": "babel-node",
+    "watch": false,
+    "watch_comments": [
+      "server.js",
+      "router.js",
+      "lib"
+    ],
+    "ignore_watch": [
+      ".git",
+      ".bowerrc",
+      ".gitignore",
+      ".bower.json",
+      "db.mwb",
+      "db.mwb.bak",
+      "package.json",
+      "pm2.json",
+      "README.md",
+      "start",
+      "node_modules",
+      "public",
+      "views"
+    ]
+  }]
+}
